@@ -6,7 +6,7 @@
     <version>25</version>
   </parent>
   <artifactId>jpgp</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>takari-jar</packaging>
   <properties>
     <takari.javaSourceVersion>1.8</takari.javaSourceVersion>
@@ -42,8 +42,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <scm>
-    <tag>jpgp-1.0.0</tag>
-  </scm>
 </project>
