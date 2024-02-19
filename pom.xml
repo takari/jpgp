@@ -3,42 +3,88 @@
   <parent>
     <groupId>io.takari</groupId>
     <artifactId>takari</artifactId>
-    <version>25</version>
+    <version>52</version>
   </parent>
   <artifactId>jpgp</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.9</version>
   <packaging>takari-jar</packaging>
   <properties>
-    <takari.javaSourceVersion>1.8</takari.javaSourceVersion>
+    <takari.javaSourceVersion>11</takari.javaSourceVersion>
+    <takari.annotationProcessing>proc</takari.annotationProcessing>
     <maven.compiler.source>${takari.javaSourceVersion}</maven.compiler.source>
     <maven.compiler.target>${takari.javaSourceVersion}</maven.compiler.target>
-  </properties>
+    <junixsocket.version>2.9.0</junixsocket.version>
+    <slf4j.version>1.7.36</slf4j.version>
+    <jackson.databind.version>2.13.2.1</jackson.databind.version>
+    <jackson.version>2.13.1</jackson.version>
+    <bouncycastle.version>1.77</bouncycastle.version>
+    <jgit.version>6.8.0.202311291450-openl</jgit.version>
+    <junit.version>4.13.2</junit.version>
+    <assertj.version>3.25.3</assertj.version>  </properties>
   <dependencies>
     <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcpg-jdk15on</artifactId>
-      <version>1.59</version>
+      <groupId>org.openl.jgit</groupId>
+      <artifactId>org.eclipse.jgit.gpg.bc</artifactId>
+      <version>${jgit.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openl.jgit</groupId>
+      <artifactId>org.eclipse.jgit</artifactId>
+      <version>${jgit.version}</version>
     </dependency>
     <dependency>
       <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15on</artifactId>
-      <version>1.59</version>
+      <artifactId>bcpg-jdk18on</artifactId>
+      <version>${bouncycastle.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk18on</artifactId>
+      <version>${bouncycastle.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.25</version>
+      <version>${slf4j.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>3.1.0</version>
+      <groupId>com.kohlschutter.junixsocket</groupId>
+      <artifactId>junixsocket-common</artifactId>
+      <version>${junixsocket.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.kohlschutter.junixsocket</groupId>
+      <artifactId>junixsocket-native-common</artifactId>
+      <version>${junixsocket.version}</version>
+    </dependency>
+    <!-- Immutables -->
+    <!-- These are required for use of Immutables -->
+    <dependency>
+      <groupId>org.immutables</groupId>
+      <artifactId>value</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.errorprone</groupId>
+      <artifactId>error_prone_annotations</artifactId>
+      <version>2.25.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
